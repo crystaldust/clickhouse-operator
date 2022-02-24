@@ -1,0 +1,12 @@
+spec:
+  template:
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: clickhouse-slot
+                operator: In
+                values:
+                - "0"

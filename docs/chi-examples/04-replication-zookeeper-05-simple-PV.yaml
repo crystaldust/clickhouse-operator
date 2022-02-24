@@ -8,16 +8,16 @@ spec:
   defaults:
     templates: 
       dataVolumeClaimTemplate: default
-      podTemplate: clickhouse:20.7
+      podTemplate: clickhouse:21.12
  
   configuration:
     zookeeper:
       nodes:
-      - host: zookeeper.zoo1ns
+      - host: zookeeper.zoons
     clusters:
       - name: replicated
         layout:
-          shardsCount: 1
+          shardsCount: 2
           replicasCount: 2
 
   templates:
@@ -28,10 +28,10 @@ spec:
             - ReadWriteOnce
           resources:
             requests:
-              storage: 500Mi
+              storage: 128Gi
     podTemplates:
-      - name: clickhouse:20.7
+      - name: clickhouse:21.12
         spec:
           containers:
             - name: clickhouse-pod
-              image: yandex/clickhouse-server:20.7
+              image: yandex/clickhouse-server:21.12

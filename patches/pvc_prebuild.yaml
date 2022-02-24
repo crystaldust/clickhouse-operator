@@ -1,0 +1,103 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  finalizers:
+  - kubernetes.io/pvc-protection
+  labels:
+    clickhouse.altinity.com/app: chop
+    clickhouse.altinity.com/chi: repl-05
+    clickhouse.altinity.com/cluster: replicated
+    clickhouse.altinity.com/namespace: default
+    clickhouse.altinity.com/reclaimPolicy: Delete
+    clickhouse.altinity.com/replica: "0"
+    clickhouse.altinity.com/shard: "0"
+  name: default-chi-repl-05-replicated-0-0-0
+  namespace: default
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 80Gi
+  volumeMode: Filesystem
+  volumeName: clickhouse-local-pv-volume-1
+  storageClassName: "clickhouse-local-pv"
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  finalizers:
+  - kubernetes.io/pvc-protection
+  labels:
+    clickhouse.altinity.com/app: chop
+    clickhouse.altinity.com/chi: repl-05
+    clickhouse.altinity.com/cluster: replicated
+    clickhouse.altinity.com/namespace: default
+    clickhouse.altinity.com/reclaimPolicy: Delete
+    clickhouse.altinity.com/replica: "1"
+    clickhouse.altinity.com/shard: "0"
+  name: default-chi-repl-05-replicated-0-1-0
+  namespace: default
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 80Gi
+  volumeMode: Filesystem
+  volumeName: clickhouse-local-pv-volume-2
+  storageClassName: "clickhouse-local-pv"
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  finalizers:
+  - kubernetes.io/pvc-protection
+  labels:
+    clickhouse.altinity.com/app: chop
+    clickhouse.altinity.com/chi: repl-05
+    clickhouse.altinity.com/cluster: replicated
+    clickhouse.altinity.com/namespace: default
+    clickhouse.altinity.com/reclaimPolicy: Delete
+    clickhouse.altinity.com/replica: "0"
+    clickhouse.altinity.com/shard: "1"
+  name: default-chi-repl-05-replicated-1-0-0
+  namespace: default
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 80Gi
+  volumeMode: Filesystem
+  volumeName: clickhouse-local-pv-volume-3
+  storageClassName: "clickhouse-local-pv"
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  finalizers:
+  - kubernetes.io/pvc-protection
+  labels:
+    clickhouse.altinity.com/app: chop
+    clickhouse.altinity.com/chi: repl-05
+    clickhouse.altinity.com/cluster: replicated
+    clickhouse.altinity.com/namespace: default
+    clickhouse.altinity.com/reclaimPolicy: Delete
+    clickhouse.altinity.com/replica: "1"
+    clickhouse.altinity.com/shard: "1"
+  name: default-chi-repl-05-replicated-1-1-0
+  namespace: default
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 80Gi
+  volumeMode: Filesystem
+  volumeName: clickhouse-local-pv-volume-4
+  storageClassName: "clickhouse-local-pv"
